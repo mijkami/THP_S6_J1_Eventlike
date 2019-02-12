@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :administrator, class_name: "User"
   has_many :attendances
-  has_many :user, through: :attendance
+  has_many :user, through: :attendances
 
   validates :start_date, 
     presence: true
@@ -50,5 +50,3 @@ class Event < ApplicationRecord
   end
 
 end
-
-unless start_date.present? && start_date > Date.today
