@@ -1,27 +1,20 @@
 class Event < ApplicationRecord
+  belongs_to :administrator, class_name: "User"
   has_many :attendances
-  has_many :user, through: :attendances
-
-  validates :start_date, 
-    presence: true
-  validates :duration, 
-    presence: true,
-    numericality: { greater_than: 0 }
-  validates :title, 
-    presence: true,
-    length: { in: 5..140 }
-  validates :description,
-    presence: true,
-    length: { in: 20..1000 }
-  validates :price,
-    presence: true,
-    inclusion: 1..1000
-  validates :location,
-    presence: true
-  validates :location, presence: true
-  validate :multiple_of_5, :duration_should_not_be_null
+  has_many :attendees, class_name: "User", through: :attendances
   validate :start_date_cannot_be_created_in_the_past, on: :create
   validate :start_date_cannot_be_updated_when_past, on: :update
+  validates :title, 
+    presence: true, 
+    length: { in: 5..140 }
+  validates :description, 
+    presence: true, 
+    length: { in: 20..1000 }
+  validates :price, 
+    inclusion: 1..1000
+  validates :location, 
+    presence: true
+  validate :multiple_of_5, :duration_should_not_be_null
 
   private 
 
@@ -42,8 +35,8 @@ class Event < ApplicationRecord
   end
 
   def duration_should_not_be_null
-  	errors.add(:duration, "should not be null or absent") if
-  		duration == 0 || !duration.present?
+    errors.add(:duration, "should not be null or absent") if
+      duration == 0 || !duration.present?
   end
 
 end

@@ -51,7 +51,7 @@ RSpec.describe User, type: :model do
       it { should have_many(:attended_events).through(:attendances) } #shoulda-gem needed
       #it "should have_many attendances" do
       #  attendance = FactoryBot.create(:attendance)
-      #  attendance.update(user: @user)
+      #  attendance.update(attendee: @user)
       #  expect(@user.attendances.include?(attendance)).to eq(true)
       #end
     end

@@ -1,24 +1,19 @@
-# README
+### Eventbrite-like Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  
+## How to setup :
 
-Things you may want to cover:
+~~~~~~~~~~~~~~~~~
+$ bundle install
 
-* Ruby version
+$ rails db:create
 
-* System dependencies
+$ rails db:migrate
 
-* Configuration
+$ rails db:seed
 
-* Database creation
+$ rails console
+~~~~~~~~~~~~~~~~~
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](https://media1.tenor.com/images/f99ad6444483da12b58a2a81be281358/tenor.gif)

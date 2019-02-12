@@ -2,14 +2,14 @@
 
 one:
   email: MyString
-  encrypted_password: MyString
+  encripted_password: MyString
   description: MyText
   first_name: MyString
   last_name: MyString
 
 two:
   email: MyString
-  encrypted_password: MyString
+  encripted_password: MyString
   description: MyText
   first_name: MyString
   last_name: MyString
