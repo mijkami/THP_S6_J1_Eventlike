@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-  belongs_to :administrator, class_name: "User"
   has_many :attendances
   has_many :user, through: :attendances
 
@@ -20,11 +19,9 @@ class Event < ApplicationRecord
   validates :location,
     presence: true
   validates :location, presence: true
-  validate :date_not_in_past
-  validate :multiple_of_5
+  validate :multiple_of_5, :duration_should_not_be_null
   validate :start_date_cannot_be_created_in_the_past, on: :create
   validate :start_date_cannot_be_updated_when_past, on: :update
-  validate :duration_should_modulo_five, :duration_should_not_be_null
 
   private 
 

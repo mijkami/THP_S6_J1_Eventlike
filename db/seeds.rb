@@ -11,9 +11,9 @@ Attendance.destroy_all
 end
 
 10.times do 
-  event = Event.create!(start_date: Faker::Date.forward(23), duration: rand(1..15) * 5, title:Faker::Esport.event , description: Faker::PrincessBride.quote, price:Faker::Number.decimal(3), location:Faker::Dune.planet, administrator: rand(User.first.id..User.last.id))
+  event = Event.create!(start_date: Faker::Date.forward(23), duration: rand(1..15) * 5, title:Faker::Esport.event , description: Faker::PrincessBride.quote, price:Faker::Number.decimal(3), location:Faker::Dune.planet)
 end 
 
 6.times do 
-  attendance = Attendance.creates!(user_id: rand(User.first.id..User.last.id), event_id: rand(Event.first.id..Event.last.id), stripe_customer_id: SecureRandom.urlsafe_base64)
+  attendance = Attendance.create!(user_id: rand(User.first.id..User.last.id), event_id: rand(Event.first.id..Event.last.id), stripe_customer_id: SecureRandom.urlsafe_base64)
 end
