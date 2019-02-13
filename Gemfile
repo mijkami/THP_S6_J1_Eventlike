@@ -71,4 +71,4 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'sendgrid-ruby'
 gem 'dotenv-rails'
-
+gem 'devise'
